@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BERT News Recommender</title>
+    
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    
+    <!-- Google Fonts for better typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="header-badge">BREAKING NEWS</div>
+            <h1>📰 BERT News Intelligence</h1>
+            <p class="tagline">AI-Powered Semantic News Discovery</p>
+        </div>
+    </header>
+    
+    <main>
+        <div class="search-section">
+            <h2 class="search-title">🔍 Discover Your News</h2>
+            <p class="search-subtitle">Enter topics you care about and let AI find the most relevant stories</p>
+            
+            <div class="search-container">
+                <div class="input-wrapper">
+                    <span class="search-icon">🔎</span>
+                    <input type="text" id="queryInput" placeholder="e.g., 'artificial intelligence breakthroughs', 'climate change solutions'...">
+                </div>
+                <button onclick="fetchRecommendations()" class="btn-primary">
+                    <span class="btn-text">Find Stories</span>
+                    <span class="btn-icon">→</span>
+                </button>
+            </div>
+            
+            <div class="quick-topics">
+                <span class="quick-label">Popular:</span>
+                <button class="topic-pill" onclick="searchTopic('technology news')">💻 Technology</button>
+                <button class="topic-pill" onclick="searchTopic('business updates')">💼 Business</button>
+                <button class="topic-pill" onclick="searchTopic('sports highlights')">⚽ Sports</button>
+                <button class="topic-pill" onclick="searchTopic('science discoveries')">🔬 Science</button>
+            </div>
+        </div>
+        
+        <hr class="divider">
+
+        <section id="recommendationsList">
+            <div class="results-header">
+                <h2>📌 Top Stories For You</h2>
+                <div class="results-count" id="resultsCount"></div>
+            </div>
+            <p class="results-placeholder">Enter a search query above to discover personalized news recommendations powered by BERT semantic understanding.</p>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 AI News Recommender System</p>
+            <p class="footer-tech">Powered by BERT Transformers & Flask</p>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/main.js', q=1) }}"></script>
+</body>
+</html>
